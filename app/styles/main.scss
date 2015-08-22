@@ -1,0 +1,18 @@
+$icon-font-path: '../fonts/';
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "bower_components/fontawesome/scss/font-awesome.scss";
+// endbower
+
+@import "bem";
+@import "config";
+@import "layout";
+@import "detail";
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
