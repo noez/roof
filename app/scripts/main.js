@@ -83,6 +83,19 @@ var Detail = (function () {
 
       this.trigger.on('click', function (ev) {
         ev.preventDefault();
+        var url = $(this).attr('href');
+        $.get(url, function(response) {
+          var markup = $.parseHTML(response);
+          var form = null;
+          $.each(markup, function (i, el) {
+            if ($(el).hasClass('mail-form')) {
+              form = $(el);
+              return
+            };
+          });
+
+          self.el.find('.detail__form').append(form);
+        });
         self.openForm();
       });
 
