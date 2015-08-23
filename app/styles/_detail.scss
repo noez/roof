@@ -43,12 +43,19 @@
     font-family: 'Vollkorn', serif;
   }
   @include e(company) {
-    text-transform: uppercase;
-    font-size: 18px;
-    display: inline-block;
-    width: auto;
-    border-bottom: 1px solid rgba(black, 0.10);
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    a {
+      text-transform: uppercase;
+      font-size: 18px;
+      display: inline-block;
+      width: auto;
+      color: rgba($black, .80);
+      border-bottom: 1px solid rgba(black, 0.10);
+      font-family: 'Yanone Kaffeesatz', sans-serif;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
   }
 
   @include e(actions) {
@@ -73,6 +80,21 @@
     .simple-button {
       border: 2px solid $black;
       color: $black;
+
+      @include m(active) {
+        .simple-button__number {
+          display: block;
+        }
+        .simple-button__label {
+          display: none;
+        }
+      }
+      @include e(label) {
+        display: block;
+      }
+      @include e(number) {
+        display: none;
+      }
     }
 
     .action-button {
